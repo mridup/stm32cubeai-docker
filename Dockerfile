@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
+# Dockerfile to build a docker image with stm32cli executable
 
-#ENV DEBIAN_FRONTEND noninteractive
+FROM ubuntu:16.04
 
 RUN apt-get -y update && \
     apt-get -y install software-properties-common && \
@@ -24,7 +24,4 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN mkdir -p /stm32cubeai
 WORKDIR /stm32cubeai
 COPY start_script.sh /stm32cubeai
-#RUN ["/bin/bash", "source start_script.sh"]
-#RUN chmod 755 /opt/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/4.0.0/Utilities/linux/stm32ai
 ENTRYPOINT ["/bin/bash","-c", "source start_script.sh"]
-#CMD ["file"]
