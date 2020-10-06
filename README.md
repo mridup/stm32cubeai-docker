@@ -9,4 +9,4 @@ or,
 source docker-build.sh  
 
 #### To run stm32cli exe:
-docker run -ti stm32cubeai/abcxyz /bin/bash <args for stm32ai exe>
+docker run --rm -ti stm32cubeai/abcxyz /bin/bash <args for stm32ai exe>
